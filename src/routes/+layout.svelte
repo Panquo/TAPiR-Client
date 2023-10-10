@@ -1,13 +1,24 @@
 <script>
+	import { page } from '$app/stores';
+	import { PageService } from '../service/PageService';
 	import Header from './Header.svelte';
+	import SideMenu from './Side-Menu.svelte';
 	import './styles.css';
+
+	let pageService = new PageService();
+	let pages = pageService.getAll();
+	let currentPage = pages.find((p) => p.route === $page.url.pathname);
 </script>
 
 <div class="app">
 	<Header />
-
+	<SideMenu />
 	<main>
-		<slot />
+		{#if $page.url.pathname === '/'}
+			<slot />
+		{:else}
+			<DeckGridView page={currentPage} />
+		{/if}
 	</main>
 
 	<footer>

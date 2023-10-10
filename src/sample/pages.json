@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Stream",
+        "route": "/stream",
+        "actions": [],
+        "img": "./src/assets/obsstudio.svg"
+    },
+    {
+        "name": "Sound",
+        "route": "/sound",
+        "actions": [],
+        "icon": "music"
+    },
+    {
+        "name": "Utils",
+        "route": "/utils",
+        "actions": [],
+        "icon": "param"
+    }
+]
